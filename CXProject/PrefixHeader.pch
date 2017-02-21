@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  CXProject
+//
+//  Created by ZhangChaoxin on 16/5/4.
+//  Copyright © 2016年 ZhangChaoxin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define THEME_COLOR [UIColor blackColor]
+
+#define IOS7_OR_LATER [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0
+
+#define DEF_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define DEF_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
+
+#import "NetworkAPI.h"
+#import "DialogHandler.h"
+#import "PullingRefreshTableView.h"
+#import "NSString+UrlEncode.h"
+#import "HZUtil.h"
+#import "UIView+AutoLayout.h"
+#import "RegexKitLite.h"
+#import "UIImageView+AFNetworking.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
+#endif /* PrefixHeader_pch */
