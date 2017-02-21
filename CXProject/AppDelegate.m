@@ -21,7 +21,7 @@
     [self.window makeKeyAndVisible];
     WXGMainViewController *main = [[WXGMainViewController alloc] init];
     self.window.rootViewController = main;
-    
+    //作出改动
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {   // 判断是否是IOS7
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     }
