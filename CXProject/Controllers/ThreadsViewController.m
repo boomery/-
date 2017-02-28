@@ -90,14 +90,26 @@
     }
     if (indexPath.row == 0)
     {
+        cell.isPo = YES;
         cell.model = _model;
         return cell;
     }
     if (self.replysArray.count >= indexPath.row)
     {
-        cell.model = self.replysArray[indexPath.row-1];
+        ThreadModel *model = self.replysArray[indexPath.row-1];
+        cell.isPo = [self isPoWithModel:model];
+        cell.model = model;
     }
     return cell;
+}
+
+- (BOOL)isPoWithModel:(ThreadModel *)model
+{
+    if ([model.uid isEqualToString:_model.uid])
+    {
+        return YES;
+    }
+    return NO;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

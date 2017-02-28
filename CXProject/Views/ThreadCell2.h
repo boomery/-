@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) NSLayoutConstraint *aImageViewHeightConstraint;
 
+@property (nonatomic, assign) BOOL isPo;
 
 @property (nonatomic, strong) ThreadModel *model;
 

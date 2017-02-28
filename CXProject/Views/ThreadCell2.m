@@ -16,7 +16,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
         //uid
-        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 80, 20)];
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 20)];
         [self addSubview:nameLabel];
         nameLabel.font = [UIFont systemFontOfSize:13.5];
         _nameLabel = nameLabel;
@@ -81,7 +81,7 @@
 {
     _model = model;
     NSRange range = [model.uid rangeOfString:@"管理"];
-    if (range.location != NSNotFound)
+    if (range.location != NSNotFound || self.isPo)
     {
         _nameLabel.textColor = [UIColor redColor];
     }

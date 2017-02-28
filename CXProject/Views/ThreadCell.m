@@ -25,7 +25,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
         //uid
-        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 80, 20)];
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 20)];
         [self addSubview:nameLabel];
         nameLabel.font = [UIFont systemFontOfSize:13.5];
         _nameLabel = nameLabel;
