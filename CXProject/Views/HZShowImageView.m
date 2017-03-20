@@ -26,7 +26,7 @@
         _imageArray = array;
         _selectedIndex = index;
         UIView *bgBlackView = [[UIView alloc]initWithFrame:frame];
-        bgBlackView.backgroundColor = [UIColor blackColor];
+        bgBlackView.backgroundColor = [UIColor whiteColor];
         [self addSubview:bgBlackView];
         self.bgView = bgBlackView;
         

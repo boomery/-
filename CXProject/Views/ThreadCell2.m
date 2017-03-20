@@ -45,7 +45,7 @@
         UIImageView *imageView = [[UIImageView alloc] initForAutoLayout];
         imageView.userInteractionEnabled = YES;
         [self addSubview:imageView];
-        imageView.backgroundColor = [UIColor redColor];
+        imageView.backgroundColor = [UIColor whiteColor];
         [imageView autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self withOffset:-5];
         [imageView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self withOffset:5];
         [imageView autoSetDimension:ALDimensionWidth toSize:100];
