@@ -15,9 +15,9 @@
 
 #define API_HOST @"http://h.koukuko.com/api"
 
-#define DEF_API_PATH(name,page) [NSString stringWithFormat:@"%@?page=%d",name,page]
+#define DEF_API_PATH(name,page) [NSString stringWithFormat:@"%@?page=%ld",name,page]
 
-#define DEF_API_THREAD(name,page) [NSString stringWithFormat:@"t/%d?page=%d",name,page]
+#define DEF_API_THREAD(name,page) [NSString stringWithFormat:@"t/%ld?page=%ld",name,page]
 
 
 /**
