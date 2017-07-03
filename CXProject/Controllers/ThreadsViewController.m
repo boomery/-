@@ -18,6 +18,7 @@
     PullingRefreshTableView *tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.tableFooterView = [[UIView alloc] init];
     tableView.pullingDelegate = self;
     [self.view addSubview:tableView];
     self.tableView = tableView;

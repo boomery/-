@@ -58,6 +58,7 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.pullingDelegate = self;
+    tableView.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:tableView];
     self.tableView = tableView;
 }

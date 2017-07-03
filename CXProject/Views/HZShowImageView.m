@@ -26,14 +26,14 @@
         _imageArray = array;
         _selectedIndex = index;
         UIView *bgBlackView = [[UIView alloc]initWithFrame:frame];
-        bgBlackView.backgroundColor = [UIColor whiteColor];
+        bgBlackView.backgroundColor = [UIColor blackColor];
         [self addSubview:bgBlackView];
         self.bgView = bgBlackView;
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapSelf:)];
         [bgBlackView addGestureRecognizer:singleTap];
         
-        UIScrollView *contentScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 40, DEF_SCREEN_WIDTH+10, DEF_SCREEN_HEIGHT)];
+        UIScrollView *contentScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH+10, DEF_SCREEN_HEIGHT)];
         contentScrollView.pagingEnabled = YES;
         contentScrollView.backgroundColor = [UIColor clearColor];
         contentScrollView.showsVerticalScrollIndicator = NO;
@@ -49,7 +49,7 @@
         [self addSubview:pageLabel];
         pageLabel.textColor = [UIColor whiteColor];
         [pageLabel autoAlignAxis:ALAxisVertical toSameAxisOfView:self];
-        [pageLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self withOffset: 30.0];
+        [pageLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self withOffset: -30.0];
         [pageLabel autoSetDimension:ALDimensionHeight toSize:20.0];
         self.pageLabel = pageLabel;
         
@@ -60,7 +60,7 @@
             for (int i=0; i<array.count; i++)
             {
                 float width = DEF_SCREEN_WIDTH;
-                float heig = DEF_SCREEN_HEIGHT-80;
+                float heig = DEF_SCREEN_HEIGHT;
                 
                 ProgressImageView *imagePic = [[ProgressImageView alloc]initWithFrame:CGRectMake(i*(width+10), 0, width, heig)];
                 imagePic.tag = 1000 + i;

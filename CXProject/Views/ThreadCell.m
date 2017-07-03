@@ -9,7 +9,7 @@
 #import "ThreadCell.h"
 #import "ThreadModel.h"
 #import "HZShowImageView.h"
-
+#import "UIImageView+WebCache.h"
 @interface ImageViewTapGestureRecognizer : UITapGestureRecognizer
 @property (nonatomic, strong) UIImageView *imageView;
 @end
@@ -71,7 +71,7 @@
         UILabel *contentLabel = [[UILabel alloc] initForAutoLayout];
         [self addSubview:contentLabel];
         contentLabel.numberOfLines = 0;
-        contentLabel.font = [UIFont systemFontOfSize:13.5];
+        contentLabel.font = [UIFont systemFontOfSize:15];
         [contentLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self withOffset:5];
         [contentLabel autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self withOffset:-5];
         [contentLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:nameLabel withOffset:5];
@@ -104,7 +104,8 @@
     _timeLabel.text = model.dateString;
     _responseLabel.text = [NSString stringWithFormat:@"回应:%d",model.replyCount];
     _contentLabel.text = model.content;
-    [_aImageView setImageWithURL:[NSURL URLWithString:PATH(model.thumb)] placeholderImage:[UIImage imageNamed:@"placeHolder.jpg"]];
+    [_aImageView sd_setImageWithURL:[NSURL URLWithString:PATH(model.thumb)] placeholderImage:[UIImage imageNamed:@"placeHolder.jpg"]];
+//    [_aImageView setImageWithURL:[NSURL URLWithString:PATH(model.thumb)] placeholderImage:[UIImage imageNamed:@"placeHolder.jpg"]];
     if (model.thumb.length == 0)
     {
         _aImageViewHeightConstraint.constant = 0;

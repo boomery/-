@@ -49,7 +49,7 @@
                 _content = newString;
                 _noHTML = YES;
             }
-            _contentHeight = [HZUtil getHeightWithString:_content fontSize:13.5 width:DEF_SCREEN_WIDTH-10];
+            _contentHeight = [HZUtil getHeightWithString:_content fontSize:15 width:DEF_SCREEN_WIDTH-10];
         }
         else if ([key isEqualToString:@"uid"])
         {

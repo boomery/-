@@ -61,7 +61,7 @@
         UILabel *contentLabel = [[UILabel alloc] initForAutoLayout];
         [self addSubview:contentLabel];
         contentLabel.numberOfLines = 0;
-        contentLabel.font = [UIFont systemFontOfSize:13.5];
+        contentLabel.font = [UIFont systemFontOfSize:15];
         [contentLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self withOffset:5];
         [contentLabel autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self withOffset:-5];
         [contentLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:nameLabel withOffset:5];

@@ -125,30 +125,33 @@ static const CGFloat kMenuWidth = 80;
 #pragma - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // 解决菜单隐藏后点击detailView会自动显示菜单的bug，bug原因与pagingEnabled有关，还没太弄清楚，感兴趣的同学可自行查看
-    // http://stackoverflow.com/questions/4480512/uiscrollview-single-tap-scrolls-it-to-top
-    
-//    scrollView.pagingEnabled = scrollView.contentOffset.x <= kMenuWidth;
-    // 控制菜单显示与否的状态
-    self.showMenu = scrollView.contentOffset.x < kMenuWidth;
-    
-    if (self.showMenu)
+    if (scrollView == self.scrollView)
     {
-        [self.detailViewController.view addGestureRecognizer:_tap];
+        // 解决菜单隐藏后点击detailView会自动显示菜单的bug，bug原因与pagingEnabled有关，还没太弄清楚，感兴趣的同学可自行查看
+        // http://stackoverflow.com/questions/4480512/uiscrollview-single-tap-scrolls-it-to-top
+        
+        //    scrollView.pagingEnabled = scrollView.contentOffset.x <= kMenuWidth;
+        // 控制菜单显示与否的状态
+        self.showMenu = scrollView.contentOffset.x < kMenuWidth;
+        
+        if (self.showMenu)
+        {
+            [self.detailViewController.view addGestureRecognizer:_tap];
+        }
+        else
+        {
+            [self.detailViewController.view removeGestureRecognizer:_tap];
+        }
+        
+        CGFloat scale = scrollView.contentOffset.x / kMenuWidth;
+        
+        // 菜单视图的翻页效果
+        self.menuViewController.view.layer.transform = [self transformWithScale:scale];
+        self.menuViewController.view.alpha = 1 - scale;
+        
+        // 顶部按钮的滚动效果
+        [self.detailViewController rotateLeftBarButtonWithScale:scale];
     }
-    else
-    {
-        [self.detailViewController.view removeGestureRecognizer:_tap];
-    }
-    
-    CGFloat scale = scrollView.contentOffset.x / kMenuWidth;
-    
-    // 菜单视图的翻页效果
-    self.menuViewController.view.layer.transform = [self transformWithScale:scale];
-    self.menuViewController.view.alpha = 1 - scale;
-    
-    // 顶部按钮的滚动效果
-    [self.detailViewController rotateLeftBarButtonWithScale:scale];
 }
 
 // 菜单视图的翻页效果
